@@ -1,5 +1,6 @@
 package com.power.ilian.servicemycar;
 
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.MediaStore;
@@ -27,54 +28,53 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar mActionBar = getSupportActionBar();
 
-
-        mActionBar.setNavigationMode(android.app.ActionBar.NAVIGATION_MODE_TABS);
+//        ActionBar mActionBar = getSupportActionBar();
+//        mActionBar.setNavigationMode(android.app.ActionBar.NAVIGATION_MODE_TABS);
 
         viewPager = (ViewPager)findViewById(R.id.view_pager);
 
         adapter = new ViewPageAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
-        android.support.v7.app.ActionBar.TabListener listener = new android.support.v7.app.ActionBar.TabListener() {
-            @Override
-            public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
-            }
-
-            @Override
-            public void onTabReselected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
-            }
-        };
-
-        android.support.v7.app.ActionBar.Tab home = mActionBar.newTab();
-        home.setText("Home");
-        home.setTabListener(listener);
-        mActionBar.addTab(home);
-
-        android.support.v7.app.ActionBar.Tab historyRepiar = mActionBar.newTab();
-        historyRepiar.setText("History Repair");
-        historyRepiar.setTabListener(listener);
-        mActionBar.addTab(historyRepiar);
-
-
-        android.support.v7.app.ActionBar.Tab newRecipie = mActionBar.newTab();
-        newRecipie.setText("Add new repair");
-        newRecipie.setTabListener(listener);
-        mActionBar.addTab(newRecipie);
+//        android.support.v7.app.ActionBar.TabListener listener = new android.support.v7.app.ActionBar.TabListener() {
+//            @Override
+//            public void onTabSelected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
+//                viewPager.setCurrentItem(tab.getPosition());
+//            }
+//
+//            @Override
+//            public void onTabUnselected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
+//            }
+//
+//            @Override
+//            public void onTabReselected(android.support.v7.app.ActionBar.Tab tab, FragmentTransaction ft) {
+//            }
+//        };
+//
+//        android.support.v7.app.ActionBar.Tab home = mActionBar.newTab();
+//        home.setText("Home");
+//        home.setTabListener(listener);
+//        mActionBar.addTab(home);
+//
+//        android.support.v7.app.ActionBar.Tab historyRepiar = mActionBar.newTab();
+//        historyRepiar.setText("History Repair");
+//        historyRepiar.setTabListener(listener);
+//        mActionBar.addTab(historyRepiar);
+//
+//
+//        android.support.v7.app.ActionBar.Tab newRecipie = mActionBar.newTab();
+//        newRecipie.setText("Add new repair");
+//        newRecipie.setTabListener(listener);
+//        mActionBar.addTab(newRecipie);
     }
 
 
     public void navigateToFragment(View view) {
-        //if (view.getId()== R.id.btn_addCar){
-
-//            getFragmentManager().findFragmentById(R.id.add_car_fragment);
-//            onAttachFragment(new AddCarFragment());
-//        }
+        view.getId();
+//        if (view.getId()== R.id.btn_addCar){
+            adapter.getItem(4);
+            viewPager.setAdapter(adapter);
+ //      }
     }
 }

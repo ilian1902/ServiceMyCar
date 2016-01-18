@@ -26,12 +26,12 @@ public class ViewPageAdapter extends FragmentPagerAdapter {
             case 2:
                 return new AddRepairCar();
             default:
-                return null;
+                return new AddCarFragment();
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

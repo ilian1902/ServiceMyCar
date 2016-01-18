@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
-                    android:text="" />
+                    android:text="Brnd" />
 
                 <TextView
                     android:id="@+id/tv_my_car_model"

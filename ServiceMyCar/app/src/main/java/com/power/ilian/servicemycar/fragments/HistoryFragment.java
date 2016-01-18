@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.power.ilian.servicemycar.Adapters.HistoryAdapter;
@@ -19,6 +20,14 @@ import com.power.ilian.servicemycar.R;
 import java.util.ArrayList;
 
 public class HistoryFragment extends ListFragment {
+    public static final String BRAND = "Text";
+
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+        final View rootView = inflater.inflate(R.layout.history_fragment, container, false);
+        Bundle args = getArguments();
+
+//        ListView tvBrand = (ListView) rootView.findViewById(R.id.lv_history);
+//        tvBrand.setText(args.getString(BRAND));
 
 //    private ListView listView;
 //    private ArrayList<Repair> recipeArray;
@@ -74,4 +83,6 @@ public class HistoryFragment extends ListFragment {
 //        Toast.makeText(getActivity(), "Item: " , Toast.LENGTH_SHORT).show();
 //    }
 //    }
+        return rootView;
+    }
 }

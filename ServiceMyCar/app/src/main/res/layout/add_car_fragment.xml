@@ -59,20 +59,21 @@
                 android:text="@string/ev_motorAddCar"
                 android:textSize="20sp"
                 android:layout_column="0"/>
-
+<RadioGroup
+    android:layout_column="2"
+    android:orientation="horizontal">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rb_benzine"
-                android:id="@+id/rb_benzine"
-                android:layout_column="1" />
+                android:id="@+id/rb_benzine" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rb_diesel"
-                android:id="@+id/rb_diesel"
-                android:layout_column="2" />
+                android:id="@+id/rb_diesel"/>
+</RadioGroup>
         </TableRow>
 
         <TableRow
@@ -86,20 +87,20 @@
                 android:id="@+id/tv_transmissionAddCar"
                 android:textSize="20sp"
                 android:layout_column="0"/>
-
+<RadioGroup android:layout_column="2"
+    android:orientation="horizontal">
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rb_manual"
-                android:id="@+id/rb_manual"
-                android:layout_column="1" />
+                android:id="@+id/rb_manual"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rb_automatic"
-                android:id="@+id/rb_automatic"
-                android:layout_column="2" />
+                android:id="@+id/rb_automatic"/>
+</RadioGroup>
         </TableRow>
 
         <TableRow

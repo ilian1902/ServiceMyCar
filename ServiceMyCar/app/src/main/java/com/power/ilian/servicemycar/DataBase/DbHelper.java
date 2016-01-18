@@ -9,16 +9,20 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DbHelper extends SQLiteOpenHelper {
     private static int db_version = 1;
-    private  static String db_name = "MyCar";
+    private  static String db_name = "myCar.db";
     public DbHelper(Context context) {
         super(context, db_name, null, db_version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table brands" + "( _id integer primary key autoincrement, brand_url not null);");
-       // db.execSQL("create table brands" + "( _id integer primary key autoincrement, brand_url not null);");
-
+        final String SQL_CREATE_CAR_TABLE = "CREATE TABLE " + AllDataBase.CarAded.TABLE_NAME + " (" +
+                AllDataBase.CarAded._ID + " INTEGER PRIMARY KEY," +
+                AllDataBase.CarAded.COLUMN_BRAND + " TEXT NOT NULL" +
+                AllDataBase.CarAded.COLUMN_MODEL + " TEXT NOT NULL" +
+                AllDataBase.CarAded.COLUMN_KM + " TEXT NOT NULL" +
+                AllDataBase.CarAded.COLUMN_IMG + "TEXT NOT NULL" + ");";
+        db.execSQL(SQL_CREATE_CAR_TABLE);
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,13 @@ import android.widget.TextView;
 import com.power.ilian.servicemycar.Adapters.ViewPageAdapter;
 import com.power.ilian.servicemycar.R;
 
-public class HomeFragment extends android.support.v4.app.Fragment{
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class HomeFragment extends android.support.v4.app.Fragment {
     public static final String BRAND = "Text";
 
     public interface onCarClickListener {
@@ -24,10 +31,10 @@ public class HomeFragment extends android.support.v4.app.Fragment{
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.home_fragment, container, false);
-        Bundle args = getArguments();
 
-        TextView tvBrand = (TextView)rootView.findViewById(R.id.tv_my_car_brand);
+        TextView tvBrand = (TextView) rootView.findViewById(R.id.tv_my_car_brand);
         //tvBrand.setText(args.getString(BRAND));
+        //tvBrand.findViewById(R.id.et_brand);
 
 //        Button addButton = (Button)rootView.findViewById(R.id.btn_addCar);
 //        addButton.setOnClickListener(new View.OnClickListener() {
@@ -42,4 +49,43 @@ public class HomeFragment extends android.support.v4.app.Fragment{
         return rootView;
     }
 
+    private class ReadForFileIn {
+
+        private static final String LOG_TAG = "Erorr";
+
+        public void Read (){
+            String text = null;
+            FileInputStream inputStream;
+            try {
+                inputStream = getContext().openFileInput("File_Name");
+                text = readStream(inputStream);
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+       }
+        private String readStream(FileInputStream inputStream){
+            String text = null;
+            BufferedReader reader = null;
+            StringBuffer buffer = new StringBuffer();
+            if (inputStream == null){
+                return  null;
+            }
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            try {
+                while ((line = reader.readLine()) != null){
+                    buffer.append(line + "\n");
+                }
+            }catch (IOException e){
+                Log.e(LOG_TAG, e.getMessage());
+            }
+            if (buffer.length() == 0){
+                return  null;
+            }
+            text = buffer.toString();
+            return  text.toString();
+        }
+    }
 }
