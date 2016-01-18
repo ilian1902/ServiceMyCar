@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Service My Car</string>
+    <string name="btn_addCar">Add Car</string>
+    <string name="btn_save">Save</string>
+    <string name="et_brand">Brand</string>
+    <string name="tv_addCarHeader">Add your car</string>
+    <string name="et_model">Model</string>
+    <string name="et_dateManifacture">Year of manufacture</string>
+    <string name="et_km">km</string>
+    <string name="ev_motorAddCar">Motor</string>
+    <string name="rb_benzine">Benzine</string>
+    <string name="rb_diesel">Diesel</string>
+    <string name="tv_transmissionAddCar">Transmission</string>
+    <string name="rb_manual">Manual</string>
+    <string name="rb_automatic">Automatic</string>
+    <string name="cb_ac">A / C</string>
+    <string name="btn_addPhoto">Add Photo</string>
+    <string name="tv_photo">Image</string>
+
+
+
+</resources>
